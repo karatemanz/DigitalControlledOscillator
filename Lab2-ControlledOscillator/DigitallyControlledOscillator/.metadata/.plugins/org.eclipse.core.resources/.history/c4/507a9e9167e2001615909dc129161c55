@@ -1,0 +1,40 @@
+//*****************************************************************************
+//
+// MSP432 Digital_Lock.c
+//
+//****************************************************************************
+
+#include <stdint.h>
+#include "msp432p401r.h"
+
+#define P1DIR (*((volatile uint8_t *) 0x40004C04
+
+//Initializes the pins on port 1 with switches connected to them as GPIO inputs
+void Initialize_Port1(void)
+{
+
+}
+
+//Initializes the pins on port 2 with LEDs connected to them as GPIO outputs
+void Initialize_Port2(void)
+{
+
+}
+
+//Returns the data on Port 1
+uint8_t Read_Port1(void)
+{
+
+}
+
+//Sets the output data on Port 2
+void Write_Port2(uint8_t value)
+{
+
+}
+
+
+int main(void)
+{
+
+}

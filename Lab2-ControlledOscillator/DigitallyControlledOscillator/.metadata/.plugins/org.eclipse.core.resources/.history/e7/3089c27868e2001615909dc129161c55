@@ -1,0 +1,56 @@
+//*****************************************************************************
+//
+// MSP432 Digital_Lock.c
+//
+//****************************************************************************
+
+#include <stdint.h>
+#include "msp432p401r.h"
+
+
+#define P1DIR (*((volatile uint8_t *) 0x40004C04
+#define P1REN (*((volatile uint8_t *) 0x40004C06
+#define P1SEL0 (*((volatile uint8_t *) 0x40004C0A
+#define P1SEL1 (*((volatile uint8_t *) 0x40004C0C
+
+#define P2DIR (*((volatile uint8_t *) 0x40004C05
+#define P2REN (*((volatile uint8_t *) 0x40004C07
+#define P2SEL0 (*((volatile uint8_t *) 0x40004C0B
+#define P2SEL1 (*((volatile uint8_t *) 0x40004C0D
+
+
+//Initializes the pins on port 1 with switches connected to them as GPIO inputs
+void Initialize_Port1(void)
+{
+	P1DIR = 0x00;	// input mode for switches
+	P1REN = 0xFE;  	// enable the resistors for the two switches
+	P1SEL0 = 0x00; 	// GPIO pin setting
+	P1SEL1 = 0x00;
+}
+
+//Initializes the pins on port 2 with LEDs connected to them as GPIO outputs
+void Initialize_Port2(void)
+{
+	P2DIR = 0x07;	// output mode for 3 LEDs of Port2
+	P2REN = 0x07;	// enable the resistors for the two switches
+	P2SEL0 = 0x00;  // GPIO pin setting
+	P2SEL1 = 0x00;
+}
+
+//Returns the data on Port 1
+uint8_t Read_Port1(void)
+{
+
+}
+
+//Sets the output data on Port 2
+void Write_Port2(uint8_t value)
+{
+
+}
+
+
+int main(void)
+{
+
+}
